@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState , Component } from 'react';
+import axios from 'axios';
 
-function App() {
+import EmojiInput from './EmojiInput';
+import EmojiPerson from './EmojiPerson';
+
+const App = () => {
+  const [people, setPeople] = useState([]);
+
+  const onSubmit = async (names) => {
+    try {
+      const res = await axios.post('/api/emojify', names);
+
+      setPeople(res.data);
+    } catch (err) {
+      alert('Oh hey. Something went wrong...');
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{
+      padding: '15% 1rem 5rem',
+      maxWidth: '30rem',
+      margin: '0 auto'
+    }}>
+      <EmojiInput submit={onSubmit} />
+      {people.map((person, i) => {
+        return <EmojiPerson key={i} person={person}></EmojiPerson>
+      })}
     </div>
   );
-}
+};
 
 export default App;
