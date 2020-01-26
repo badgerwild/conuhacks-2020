@@ -5,25 +5,42 @@ class NavBar extends Component {
   render() {
     return <Shellbar
     logo={<img alt="SAP" src="//unpkg.com/fundamental-styles/dist/images/sap-logo.png"/>}
-    productTitle="Corporate Portal"
-    profile={{
-      colorAccent: 8,
-      initials: 'JS',
-      userName: 'John Snow'
+    productTitle="Fun Learning Tool"
+    productSwitcher={{
+      callback: function S(){},
+      glyph: 'grid',
+      label: 'Product Switcher'
     }}
-    profileMenu={[
+    productSwitcherList={[
       {
         callback: function S(){},
-        glyph: 'action-settings',
-        name: 'Settings',
-        size: 's'
+        glyph: 'home',
+        size: 's',
+        logoSAP: 'true',
+        title: 'Login'
       },
       {
         callback: function S(){},
-        glyph: 'log',
-        name: 'Sign Out',
-        size: 's'
-      }
+        glyph: 'sap-icon--credit-card',
+        size: 's',
+        logoSAP: 'true',
+        title: 'Minigame 1',
+        onclick: ReactDOM.render(<NavBar />,<FlashCard />, document.getElementById('root'))
+      },
+      {
+        callback: function S(){},
+        glyph: 'business-objects-experience',
+        size: 's',
+        logoSAP: 'true',
+        title: 'Analytics Cloud'
+      },
+      {
+        callback: function S(){},
+        glyph: 'activate',
+        size: 's',
+        logoSAP: 'true',
+        title: 'Ariba'
+      },
     ]}
   />;
   }
