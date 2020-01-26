@@ -2,8 +2,9 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-
-import NavBar from "./components/NavBar";
+import { Button } from "fundamental-react/Button";
+import PageSwitcher from "./PageSwitcher";
 import "./index.css";
+//import LoginPage from "./LoginPage";
 
-ReactDOM.render(<NavBar />, document.getElementById("root"));
+ReactDOM.render(<PageSwitcher />, document.getElementById("root"));
