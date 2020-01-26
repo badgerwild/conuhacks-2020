@@ -12,7 +12,6 @@ import {
 } from "fundamental-react/Forms";
 import { InputGroup } from "fundamental-react/InputGroup";
 import "./LoginPage.css";
-//import { Shellbar } from "fundamental-react";
 
 class LoginPage extends Component {
   constructor() {
