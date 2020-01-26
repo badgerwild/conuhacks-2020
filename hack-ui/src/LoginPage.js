@@ -61,8 +61,10 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="Login">
+        <h1 classname="centered">Login</h1>
         <form onSubmit={this.handleSubmit}>
           {this.state.error && <Alert type="warning">{this.state.error}</Alert>}
+          <br></br>
           <FormGroup>
             <FormLabel className="formcomp" htmlFor="input-1">
               Username
