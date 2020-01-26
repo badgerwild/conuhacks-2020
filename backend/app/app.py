@@ -21,6 +21,8 @@ class User(db.Model):
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[InputRequired()])
     password = PasswordField('Password', validators=[InputRequired()])
+    name = StringField('RealName')
+    location = StringField('Location')
 
 
 @app.route('/')
