@@ -19,8 +19,10 @@ class User(db.Model):
     location = db.Column(db.String(50))
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[InputRequired()])
-    password = PasswordField('Password', validators=[InputRequired()])
+    user = StringField('Username', validators=[InputRequired()])
+    passw = PasswordField('Password', validators=[InputRequired()])
+    name = StringField('RealName')
+    location = StringField('Location')
 
 
 @app.route('/')
@@ -28,9 +30,9 @@ def homepage():
     return 'test version 1! '
 
 
-@app.route('/user', methods=['GET', 'POST'])
+@app.route('/temp', methods=['GET', 'POST'])
 def create_user():
-    if request.method = 'POST':
+
 
 
     return render_template('temp.html')
