@@ -7,6 +7,7 @@ import json
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'amendmentsensuousbadassupcountry'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://///home/jason/conuhacks-2020/backend/data/storage.db'
     #'postgres://badger:badger@postgres:5432/profile_db'
 db = SQLAlchemy(app)
@@ -32,9 +33,7 @@ def homepage():
 
 @app.route('/user', methods=['GET', 'POST'])
 def create_user():
-    if request.method = 'POST':
-
-
+    form = LoginForm;
     return render_template('temp.html')
 
 
